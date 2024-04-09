@@ -1,0 +1,16 @@
+version: '3.9'
+
+services:
+  postgres:
+    container_name: point-postgres
+    image: postgres:16.2
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: point
+      POSTGRES_USER: local
+      POSTGRES_PASSWORD: local
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - ./infra/postgres/data:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'

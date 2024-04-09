@@ -1,0 +1,12 @@
+@base=http://localhost:8080
+
+GET {{base}}/hello
+
+
+###
+
+# Fetch EOA's total gas used fee
+GET https://api.dune.com/api/v1/query/3600529/results?offset=0&limit=10&allow_partial_results=true
+X-Dune-API-Key: Secret
+
+###
